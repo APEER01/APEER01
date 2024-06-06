@@ -1,0 +1,378 @@
+@charset "utf-8";
+
+html {
+    font-family: "Zen Maru Gothic", serif;
+    font-weight: 400;
+    margin: 0;
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+    position: relative;
+    height: 100%;
+}
+
+/* menuホバー時のアニメーション */
+@keyframes repeat2{
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+/*  */
+
+/*  */
+.button{
+    all: unset;
+    display: block;
+    margin: 24px auto 0;
+    padding: 16px 64px;
+    border: 1px solid black;
+    width: fit-content;
+    position: relative;
+    overflow: hidden;
+    color: black;
+}
+
+.button::before{
+    content: '';
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    transform: translateX(-100%);
+    z-index: 2;
+    color: white;
+}
+
+.button:hover{
+    color: white;
+    background-color: none;
+}
+
+.button:hover::before{
+    transform: translateX(100%);
+    animation: repeat1 1500ms linear infinite;
+    z-index: -1;
+}
+
+.white{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    z-index: -1;
+}
+/*  */
+
+/*  */
+@keyframes revolve{
+  100%{
+      transform: rotate(360deg);
+  }
+}
+
+/*  */
+.background{
+    height: 110vh;
+    position: relative;
+    z-index: -1;
+
+    .back-img{
+        height: 110vh;
+        width: 100%;
+        opacity: .8;
+        filter: contrast(130%);
+        margin: 0;
+        z-index: -1;
+    }
+}
+
+header{
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 130px;
+    width: 100%;
+    margin: 0 auto;
+    z-index: 2;
+
+    .header{
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        content: '';
+        background-color: rgba(0, 0, 0, 0.2);
+
+        h1{
+            font-family: "Chango", sans-serif;
+            position: relative;
+            letter-spacing: .1em;
+            opacity: 0;
+            margin: 16px 0 0 0;
+            text-align: center;
+            color: white;
+            font-size: 32px;
+        }
+    
+        h1::after{
+            content: '-エイピア-';
+            font-size: 16px;
+            font-family: "Zen Maru Gothic", serif;
+            position: absolute;
+            top: 36px;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            text-align: center;
+        }
+    
+        .fade-right1{
+            transform: none;
+            transition-duration: 1000ms;
+            opacity: 1;
+        }
+    
+        ul{
+            display: flex;
+            width: fit-content;
+            padding: 0;
+            text-align: center;
+            margin: 16px auto 0;  
+        }
+
+        .li{
+            padding: 8px 24px;
+            display: flex;
+            cursor: pointer;
+            opacity: 0;
+            position: relative;
+            overflow-x: hidden;
+
+            .material-symbols-outlined{
+                margin: 0;
+                padding: 7px 4px 0 0;
+                color: white;
+            }
+    
+            a{
+                display: block;
+                text-align: center;
+                font-size: 16px;
+                letter-spacing: .1em;
+                font-size: 24px;
+                color: white;
+            }
+        }
+
+        .li::before{
+            content: '';
+            width: 75%;
+            height: 2px;
+            background-color: white;
+            bottom: 6px;
+            right: 0;
+            left: 0;
+            margin: 0 auto;
+            position: absolute;
+            opacity: 0;
+        }
+
+        .li:hover::before{
+            animation: repeat2 1200ms ease-in infinite;
+        }
+
+
+    
+        .fade-right2-1{
+            transform: none;
+            opacity: 1;
+            transition-delay: .5s;
+            transition-duration: 1s;
+        }
+        
+        .fade-right2-2{
+            transition-delay: .7s;
+            transform: none;
+            opacity: 1;
+            transition-duration: 1s;
+        }
+        
+        .fade-right2-3{
+            transition-delay: .9s;
+            transform: none;
+            opacity: 1;
+            transition-duration: 1s;
+        }
+        
+        .fade-right2-4{
+            transition-delay: 1.2s;
+            transform: none;
+            opacity: 1;
+            transition-duration: 1s;
+        }
+    }
+}
+
+main{
+    width: 100vw;
+    height: fit-content;
+    top: 35vh;
+    margin-top: -75vh;
+
+    .semi-circle{
+      width: 130vw;
+      height: 80vh;
+      margin-left: -15vw;
+      border-top-left-radius: 50%;
+      border-top-right-radius: 50%;
+      background-color: white;
+    }
+
+    .logo-title{
+        width: fit-content;
+        margin: -75vh auto;
+  
+        .img1{
+          width: 100px;
+          height: 60px;
+          display: block;
+          margin: 0 auto;
+        }
+  
+        p{
+          background-color: white;
+          font-size: 32px;
+          margin-top: -10px;
+          text-align: center;
+          letter-spacing: .2rem;
+          position: relative;
+          z-index: 1;
+          line-height: 30px;
+        }
+      }
+
+    .news{
+        width: 100%;
+        margin: 85vh auto 0;
+  
+        h2{
+          font-weight: normal;
+          position: relative;
+          width: 60%;
+          margin: 0 auto;
+          font-family: "Noto Serif JP", serif;
+          cursor: pointer;
+        }
+  
+        h2::before{
+          content: '';
+          position: absolute;
+          bottom: -4px;
+          left: 0;
+          right: 0;
+          width: 100%;
+          height: 1px;
+          margin: 0 auto;
+          background-color: black;
+        }
+
+        h2:hover{
+          opacity: .7;
+        }
+
+        .content{
+          width: 50%;
+          margin: 40px auto;
+          font-family: "Noto Serif JP", serif;
+          box-shadow: 0px 2px 8px grey;
+          background-color: rgb(209, 209, 209, .2);
+          padding: 16px;
+
+          .date{
+            margin: 0 0 16px 0;
+            font-size: 18px;
+          }
+
+          .explain{
+            margin: 0;
+            font-size: 18px;
+          }
+        }
+  
+      }
+
+}
+
+#company{
+    width: 100%;
+    height: 110px;
+    margin-top: 200px;
+    background-color: lightgray;
+    position: relative;
+
+    .page-top{
+        position: absolute;
+        top: -60px;
+        right: 0;
+        left: 0;
+        height: 120px;
+        width: 120px;
+        border-radius: 50%;
+        background-color: lightgrey;
+        z-index: 5;
+        margin: 0 auto;
+        cursor: pointer;
+
+        img{
+            width: 60px;
+            height: 70px;
+            margin: 8px auto 0;
+            display: block;
+        }
+
+        p{
+            text-align: center;
+            color: white;
+            margin: 0;
+            font-size: 16px;
+            font-weight: bold;
+            letter-spacing: .1rem;
+
+        }
+    }
+
+    .page-top:hover{
+        animation: revolve 2s linear infinite;
+    }
+
+    small{
+        width: fit-content;
+        margin: 0 auto;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        right: 0;
+    }
+}
